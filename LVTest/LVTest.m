@@ -47,22 +47,25 @@
     
     srand((time(NULL)));
     LVBasket *basket = [[LVBasket alloc] init];
-    
     LVApple* apple = [[LVApple alloc]initWithSeeds: 2];
     [basket addFruit: apple];
+    [apple release];
     apple = [[LVApple alloc]initWithSeeds: 3];
     [basket addFruit: apple];
+    [apple release];
     apple = [[LVApple alloc]initWithSeeds: 4];
     [basket addFruit: apple];
+    [apple release];
     LVOrange* orange = [[LVOrange alloc]initWithSeeds: 5];
     [basket addFruit: orange];
+    [orange release];
     orange = [[LVOrange alloc]initWithSeeds: 6];
     [basket addFruit: orange];
+    [orange release];
     orange = [[LVOrange alloc]initWithSeeds: 7];
     [basket addFruit: orange];
-    id <LVPrIterator> iter = [[LVIterator alloc]initWithBasket: basket];
     [orange release];
-    [apple release];
+    id <LVPrIterator> iter = [[LVIterator alloc]initWithBasket: basket];
     for(int i = 0; i <= basket.countOfFruits; i++)
     {
          XCTAssertTrue([iter hasNext], @"There is a next fruit in basket.");

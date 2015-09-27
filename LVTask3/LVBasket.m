@@ -31,6 +31,17 @@
     return fruits[index];
 }
 
+- (void)dealloc
+{
+    for(int i = 0; i <= self.countOfFruits; i++)
+    {
+        [fruits[i] release];
+    }
+    
+    [super dealloc];
+}
+
+
 
 @end
 

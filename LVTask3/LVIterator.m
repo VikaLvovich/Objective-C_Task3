@@ -36,7 +36,6 @@
         step++;
     step = -step;
     currNum += step;
-    [fruit release];
     return fruit;
 }
 
